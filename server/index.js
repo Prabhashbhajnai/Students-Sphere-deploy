@@ -27,8 +27,7 @@ import Quespaper from "./API/Quespaper/index.js";
 import User from "./API/User/index.js";
 
 // Database Connection
-// import ConnectDB from "./database/connection.js";
-import ConnectDB from "../client/build/index.html";
+import ConnectDB from "./database/connection.js";
 
 const studenthub = express();
 
