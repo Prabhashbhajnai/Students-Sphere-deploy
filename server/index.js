@@ -1,5 +1,7 @@
 // importing env variables
-require("dotenv").config();
+import dotenv from "dotenv"
+dotenv.config()
+// require("dotenv").config();
 
 // Libraries
 import express from "express";
@@ -10,22 +12,22 @@ import path from "path"
 import { fileURLToPath } from 'url';
 
 // import configs
-import googleAuthConfig from "./config/google.config";
-import routeConfig from "./config/route.config";
+import googleAuthConfig from "./config/google.config.js";
+import routeConfig from "./config/route.config.js";
 
 // microservice routes
-import Auth from "./API/Auth";
-import Books from "./API/Books";
-import Forum from "./API/Forum";
-import Reply from "./API/ForumReply";
-import Review from "./API/Review";
-import Upload from "./API/S3Upload";
-import Teachers from "./API/Teachers";
-import Quespaper from "./API/Quespaper";
-import User from "./API/User";
+import Auth from "./API/Auth/index.js";
+import Books from "./API/Books/index.js";
+import Forum from "./API/Forum/index.js";
+import Reply from "./API/ForumReply/index.js";
+import Review from "./API/Review/index.js";
+import Upload from "./API/S3Upload/index.js";
+import Teachers from "./API/Teachers/index.js";
+import Quespaper from "./API/Quespaper/index.js";
+import User from "./API/User/index.js";
 
 // Database Connection
-import ConnectDB from "./database/connection";
+import ConnectDB from "./database/connection.js";
 
 const studenthub = express();
 
@@ -56,13 +58,13 @@ studenthub.use("/api/quespaper", Quespaper);
 // studenthub.get("/", (req, res) => res.json({ message: "Setup Success!" }));
 
 // static files
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-studenthub.use(express.static(path.join(__dirname, './client/build')))
+studenthub.use(express.static(path.join(__dirname, '../client/build')))
 
 studenthub.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, './client/build/index.html'))
+    res.sendFile(path.join(__dirname, '../client/build/index.html'))
 })
 
 studenthub.listen(4000, () =>

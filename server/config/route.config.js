@@ -1,7 +1,7 @@
 import JwtPassport from "passport-jwt";
 
 // Database Model
-import { UserModel } from "../Database/user";
+import { UserModel } from "../database/user/index.js";
 
 
 const JWTStrategy = JwtPassport.Strategy;

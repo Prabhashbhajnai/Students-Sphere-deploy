@@ -1,9 +1,9 @@
-import { BookModel } from "./book";
-import { ForumModel } from "./forum";
-import { ForumReplyModel } from "./forumReply";
-import { QuesPaperModel } from "./quespaper";
-import { ReviewModel } from "./reviews";
-import { TeacherModel } from "./teacher";
-import { UserModel } from "./user";
+import { BookModel } from "./book/index.js";
+import { ForumModel } from "./forum/index.js";
+import { ForumReplyModel } from "./forumReply/index.js";
+import { QuesPaperModel } from "./quespaper/index.js";
+import { ReviewModel } from "./reviews/index.js";
+import { TeacherModel } from "./teacher/index.js";
+import { UserModel } from "./user/index.js";
 
 export { BookModel, ForumModel, ForumReplyModel, QuesPaperModel, ReviewModel, TeacherModel, UserModel };

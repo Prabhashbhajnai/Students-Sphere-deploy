@@ -3,7 +3,7 @@ import express from "express";
 import multer from "multer";
 
 // Utilities
-import { s3Upload } from "../../Utils/s3";
+import { s3Upload } from "../../Utils/s3.js";
 
 const Router = express.Router();
 

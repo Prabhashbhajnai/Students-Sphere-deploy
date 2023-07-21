@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "server": "nodemon server.js",
+    "server": "nodemon index.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm start\" \"npm run client\" "
   },
@@ -34,5 +34,6 @@
     "@babel/node": "^7.20.7",
     "@babel/preset-env": "^7.16.11",
     "nodemon": "^2.0.15"
-  }
+  },
+  "type": "module"
 }
