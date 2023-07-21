@@ -1,0 +1,1 @@
+export const GET_QUESPAPER = "GET_QUESPAPER";
