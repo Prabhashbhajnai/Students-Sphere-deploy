@@ -64,7 +64,8 @@ const __dirname = path.dirname(__filename);
 studenthub.use(express.static(path.join(__dirname, '../client/build')))
 
 studenthub.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'))
+    // res.sendFile(path.join(__dirname, '../client/build/index.html'))
+    res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 
 studenthub.listen(4000, () =>
