@@ -34,7 +34,13 @@ const studenthub = express();
 // application middlewares
 studenthub.use(express.json());
 studenthub.use(express.urlencoded({ extended: false }));
-studenthub.use(helmet());
+studenthub.use(
+    helmet.contentSecurityPolicy({
+        useDefaults: true,
+        directives: {
+            "img-src": ["'self'", "https: data:"]
+        }
+    }));
 studenthub.use(cors());
 // studenthub.use(express.session());
 // studenthub.use(passport.initialize());
